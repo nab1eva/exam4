@@ -53,7 +53,7 @@ const getStudentCard = ({
           <b>Birthday</b>: ${birthday} <br />
           <b>Works: </b>${isWork ? "Yes" : "No"} <br>
           <b>Tel</b>: ${phoneNumber} <br />
-          <b>Email</b>: ${email}
+          <b>Email</b>: ${email} <br/>
           <b>Field</b>: ${field}
         </p>
         <div class="btns d-flex justify-content-between">
