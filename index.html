@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Teachers</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65"
+      crossorigin="anonymous"
+    />
+    <link rel="stylesheet" href="css/style.min.css" />
+  </head>
+  <body>
+    <main>
+      <section>
+        <div class="container">
+          <div class="input-group my-4">
+            <input
+              id="search"
+              type="text"
+              class="form-control"
+              placeholder="Search..."
+              aria-label="search"
+              aria-describedby="basic-addon1"
+            />
+            <select
+              class="btn btn-secondary"
+              type="button"
+              id="filterMarried"
+            ></select>
+            <button
+              class="btn btn-outline-secondary"
+              type="button"
+              id="add-button"
+              data-bs-toggle="modal"
+              data-bs-target="#TeacherModal"
+            >
+              Add
+            </button>
+          </div>
+          <div class="row teachers-row d-flex justify-content-center"></div>
+          <nav>
+            <ul class="pagination mt-2">
+              <li class="page-item disabled">
+                <span class="page-link">Previous</span>
+              </li>
+              <li class="page-item"><a class="page-link" href="">1</a></li>
+              <li class="page-item active">
+                <span class="page-link">2</span>
+              </li>
+              <li class="page-item"><a class="page-link" href="#">3</a></li>
+              <li class="page-item">
+                <a class="page-link" href="#">Next</a>
+              </li>
+            </ul>
+          </nav>
+        </div>
+        <!-- modal -->
+        <form class="row g-3 needs-validation teachers-form" novalidate>
+          <div
+            class="modal fade"
+            id="TeacherModal"
+            tabindex="-1"
+            aria-labelledby="TeacherModalLabel"
+            aria-hidden="true"
+          >
+            <div class="modal-dialog">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <h1 class="modal-title fs-5" id="TeacherModalLabel">Add</h1>
+                  <button
+                    type="button"
+                    class="btn-close"
+                    data-bs-dismiss="modal"
+                    aria-label="Close"
+                  ></button>
+                </div>
+                <div class="modal-body">
+                  <div class="mb-3 d-flex justify-content-between gap-2">
+                    <div>
+                      <label for="firstName" class="form-label"
+                        >Firstname</label
+                      >
+                      <input
+                        type="text"
+                        class="form-control"
+                        id="firstName"
+                        placeholder="firstname"
+                        required
+                      />
+                      <div class="valid-feedback">
+                        To'ldirganingiz uchun rahmat !
+                      </div>
+                      <div class="invalid-feedback">Iltimos to'ldiring !</div>
+                    </div>
+                    <div>
+                      <label for="lastName" class="form-label">Lastname</label>
+                      <input
+                        type="text"
+                        class="form-control"
+                        id="lastName"
+                        placeholder="lastname"
+                        required
+                      />
+                      <div class="valid-feedback">
+                        To'ldirganingiz uchun rahmat !
+                      </div>
+                      <div class="invalid-feedback">Iltimos to'ldiring !</div>
+                    </div>
+                  </div>
+
+                  <div class="col-12 mb-3">
+                    <label for="avatar" class="form-label">Image</label>
+                    <input
+                      type="text"
+                      class="form-control"
+                      id="avatar"
+                      placeholder="url"
+                      required
+                    />
+                    <div class="valid-feedback">
+                      To'ldirganingiz uchun rahmat !
+                    </div>
+                    <div class="invalid-feedback">Iltimos to'ldiring !</div>
+                  </div>
+                  <div class="mb-3 d-flex justify-content-between gap-2">
+                    <div>
+                      <label for="category" class="form-label">Phone</label>
+                      <input
+                        type="tel"
+                        class="form-control"
+                        id="category_phone"
+                        placeholder="+998"
+                        required
+                      />
+                    </div>
+                    <div>
+                      <label for="category" class="form-label">Email</label>
+                      <input
+                        type="email"
+                        class="form-control"
+                        id="category_email"
+                        placeholder="example@gamil.com"
+                        required
+                      />
+                    </div>
+                  </div>
+                  <div class="mb-3">
+                    <label for="category" class="form-label">Group</label>
+                    <input
+                      type="text"
+                      class="form-control"
+                      id="category_group"
+                      placeholder="N122"
+                      required
+                    />
+                  </div>
+                  <div class="col-12 mb-3 d-flex">
+                    <div class="form-check col-6">
+                      <input
+                        class="form-check-input"
+                        type="checkbox"
+                        id="category_married"
+                      />
+                      <label class="form-check-label" for="category_married">
+                        Is married ?
+                      </label>
+                    </div>
+                  </div>
+                </div>
+                <div class="modal-footer">
+                  <button
+                    type="button"
+                    class="btn btn-secondary"
+                    data-bs-dismiss="modal"
+                  >
+                    Close
+                  </button>
+                  <button type="submit" class="btn btn-primary modal-save">
+                    Add
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </form>
+      </section>
+      <nav aria-label="Page navigation example">
+        <ul class="pagination"></ul>
+      </nav>
+    </main>
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4"
+      crossorigin="anonymous"
+    ></script>
+    <script src="js/const.js"></script>
+    <script src="./js/main.js"></script>
+  </body>
+</html>
